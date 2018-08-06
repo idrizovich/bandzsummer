@@ -6,3 +6,5 @@
 # bendovi ce imati kategoriju "genre" gdje ce se bendovi moci filtrirati na osnovu muzike koju sviraju
 # bit ce "nastup sedmice"  kao prvi izlozeni 
 # mozda uvesti "follow za bendove" !-->
+
+dinche
