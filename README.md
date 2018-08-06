@@ -1,3 +1,3 @@
 # bandzsummer
 
-dinche
+dinche commit od kuce
