@@ -58,139 +58,7 @@
 
 </head>
 <body>
-		<div class="container">
-					<div class="row">
-					<p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Login</a></p>		
-				</div>
-			</div>
-			</div>	
-			<!-- END # BOOTSNIP INFO -->
-			
-			<!-- BEGIN # MODAL LOGIN -->
-			<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header" align="center">
-								<img src="images/logo.png">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-								</button>
-							</div>
-							
-							<!-- Begin # DIV Form -->
-							<div id="div-forms">
-							
-								<!-- Begin # Login Form -->
-								<form id="login-form">
-									<div class="modal-body">
-										<div id="div-login-msg">
-											<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-											<span id="text-login-msg">Type your username and password.</span>
-										</div>
-										<input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-										<input id="login_password" class="form-control" type="password" placeholder="Password" required>
-										<div class="checkbox">
-											<label>
-												<input type="checkbox"> Remember me
-											</label>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<div>
-											<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-										</div>
-										<div>
-											<button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-											<button id="login_register_btn" type="button" class="btn btn-link">Register</button>
-										</div>
-									</div>
-								</form>
-								<!-- End # Login Form -->
-								
-								<!-- Begin | Lost Password Form -->
-								<form id="lost-form" style="display:none;">
-									<div class="modal-body">
-										<div id="div-lost-msg">
-											<div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-											<span id="text-lost-msg">Type your e-mail.</span>
-										</div>
-										<input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
-									</div>
-									<div class="modal-footer">
-										<div>
-											<button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
-										</div>
-										<div>
-											<button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
-											<button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
-										</div>
-									</div>
-								</form>
-								<!-- End | Lost Password Form -->
-								
-								<!-- Begin | Register Form -->
-								<form id="register-form" style="display:none;">
-									<div class="modal-body">
-										<div id="div-register-msg">
-											<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
-											<span id="text-register-msg">Register an account.</span>
-										</div>
-												<br>
-												<p1>Register as:</p1>
-												<div class="btn-group" id="status" data-toggle="buttons">	
-												<label class="btn btn-default btn-on-2 btn-sm active">
-												<input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Band</label>
-												<label class="btn btn-default btn-off-2 btn-sm ">
-												<input type="radio" value="0" name="multifeatured_module[module_id][status]">User</label>
-											  </div> 
-											  <br><br>
-											  <div class="dropdown">
-
-												<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-													Genre <div class "caret"></div>	
-												</button>
-
-												<ul class="dropdown-menu">
-													<li><a href="">Rock</a> </li>
-													<li><a href=""></a>Pop</li>
-													<li><a href=""></a>Jazz</li>
-													<li><a href=""></a>Blues</li>
-												</ul>
-											  </div>
-											  <br>
-											  <label class="control-label">Select an image</label>
-												<input id="input-b5" name="input-b5[]" type="file" multiple>
-													<script>
-														$(document).on('ready', function() {
-    													$("#input-b5").fileinput({showCaption: false, dropZoneEnabled: false});
-														});
-													</script>
-											<input id="register_username" class="form-control" type="text" placeholder="Username" required>
-											<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-											<input id="register_password" class="form-control" type="password" placeholder="Password" required>
-									</div>
-									<div class="modal-footer">
-										<div>
-											<button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
-										</div>
-										<div>
-											<button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
-											<button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-										</div>
-									</div>
-								</form>
-								<!-- End | Register Form -->
-								
-							</div>
-							<!-- End # DIV Form -->
-							
-						</div>
-					</div>
-				</div>
-				<!-- END # MODAL LOGIN -->
-
-
-
+		
 <div id="fh5co-page">
 	<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 	<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
@@ -199,6 +67,7 @@
 		<nav id="fh5co-main-menu" role="navigation">
 			<ul>
 				<li class="fh5co-active"><a href="index.html">Best bandz</a></li>
+				<li><a href="genre.html">Genre</a></li>
 				<li><a href="about.html">About Us</a></li>
 				<li><a href="contact.html">Contact Us</a></li>
 			</ul>
