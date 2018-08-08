@@ -56,14 +56,26 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-		<div class="container">
+		<div class="wrap">
+				<div class="search">
+				   <input type="text" class="searchTerm" placeholder="What are you looking for?">
+				   <button type="submit" class="searchButton">
+					 <i class="fa fa-search"></i>
+				  </button>
+				</div>
+			 </div>
+			 <div class="container">
 					<div class="row">
-					<p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Login</a></p>		
+					<p class="text-center"><a href="#" class="btn btn-primary btn-md" role="button" data-toggle="modal" data-target="#login-modal">Login</a></p>		
 				</div>
 			</div>
-			</div>	
 			<!-- END # BOOTSNIP INFO -->
 			
 			<!-- BEGIN # MODAL LOGIN -->
@@ -147,14 +159,14 @@
 											  <div class="dropdown">
 
 												<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-													Genre <div class "caret"></div>	
+													Genre <span class="caret"></span>
 												</button>
 
 												<ul class="dropdown-menu">
-													<li><a href="">Rock</a> </li>
-													<li><a href=""></a>Pop</li>
-													<li><a href=""></a>Jazz</li>
-													<li><a href=""></a>Blues</li>
+													<li><a href=""></a> &nbsp; Rock</li>
+													<li><a href=""></a> &nbsp; Pop</li>
+													<li><a href=""></a> &nbsp; Jazz</li> 	
+													<li><a href=""></a> &nbsp; Blues</li>
 												</ul>
 											  </div>
 											  <br>
@@ -168,6 +180,8 @@
 											<input id="register_username" class="form-control" type="text" placeholder="Username" required>
 											<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
 											<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+											<br>
+											<textarea rows="4" cols="37"> Tell us someting about you.</textarea>
 									</div>
 									<div class="modal-footer">
 										<div>
