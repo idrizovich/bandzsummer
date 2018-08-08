@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/idrizovich/bandzsummer#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "popper.js": "^1.14.4",
+    "tooltip.js": "^1.2.0"
   }
 }
