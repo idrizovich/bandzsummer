@@ -8,9 +8,7 @@ var db = mongojs ('localhost:27017/badz', ['Bands'])
 var body_parser = require('body-parser');
 app.use(body_parser.json());
 
-
-
-app.use(express.static('static'))
+app.use(express.static('public'));
 
 app.get('/badz', function(req, res){
     db.Bands.find(function(err, docs) {
@@ -25,6 +23,7 @@ app.post('/badz', function(req, res) {
         res.json(doc);
     });
 });
+
 
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
