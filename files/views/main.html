@@ -5,6 +5,32 @@
             <span>na cijelom svijetu</span>
         </h2>
 
+        <button ng-click="openModal()">Add new event</button>
+
+        <button class="btn btn-danger" ng-click="logout()">Logout</button>
+
+        <div class="popeye-modal-container" ng-show="visible">
+            <div class="popeye-modal">
+                <a class="popeye-close-modal" href ng-click="closeModal()"></a>
+                <form>
+                    <input type="text" name="bandSurname" id="eventBandName" ng-model="events.eventBandName" placeholder="Enter bands name">
+                    <br>
+                    <br>
+                    <input type="number" name="bandJuhu" id="eventTime" ng-model="events.eventTime" placeholder="Enter the time">
+                    <br>
+                    <br>
+                    <input type="text" name="bandName" id="eventLocalName" ng-model="events.eventLocalName" placeholder="Enter local name">
+                    <br>
+                    <br>
+                    <input type="textarea" name="bandLose" id="eventLocalInfo" ng-model="events.eventLocalInfo" placeholder="Enter info about the location">
+                    <br>
+                    <br>
+                    <button ng-click="addEvent()">Add</button>
+                    <button ng-click="closeModal()">Close</button>
+                </form>
+            </div>
+        </div>
+
         <div class="row animate-box" data-animate-effect="fadeInLeft">
             <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
                 <a href="work.html">

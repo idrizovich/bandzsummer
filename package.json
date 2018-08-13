@@ -9,10 +9,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "angular-popeye": "^1.0.5",
     "angularjs-toaster": "^2.2.0",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.3.0",
     "mongodb": "^2.2.33",
+    "mongojs": "^2.6.0",
     "nodemon": "^1.18.3"
   }
 }

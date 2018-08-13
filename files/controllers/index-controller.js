@@ -62,4 +62,15 @@ app.controller('indexCtrl', function ($scope, $location, $http, toastr) {
             return false;
         }
     }
+
+    $scope.openModal = function () {
+        $scope.visible = false;
+        $scope.visible = $scope.visible = true;
+    }
+
+    
+    $scope.closeModal = function () {
+        $scope.visible = true;
+        $scope.visible = $scope.visible = true;
+    }
 });

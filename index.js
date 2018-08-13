@@ -3,6 +3,8 @@ const bodyparser = require("body-parser");
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const jwt_secret = 'WU5CjF8fHxG40S2t7oyk';
+var mongojs = require('mongojs')
+var db = mongojs('localhost:27017/Bandz', ['events'])
 
 var jwt = require('jsonwebtoken');
 var MongoId = require('mongodb').ObjectID;
@@ -10,6 +12,10 @@ var db;
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
+
+var urlencodedParser = bodyparser.urlencoded({
+  extended: false
+})
 
 app.use('/', express.static('files'));
 
@@ -96,6 +102,15 @@ app.post('/register/band', function (request, response) {
     }
   });
 });
+
+app.post('/event', urlencodedParser, function (request, response, next) {
+  console.log(request.body)
+
+  db.collection('events').save(request.body, (err, result) => {
+    if (err) return console.log(err);
+    response.send(true);
+  })
+})
 
 MongoClient.connect('mongodb://localhost:27017/Bandz', (err, database) => {
   if (err) return console.log(err)
