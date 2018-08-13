@@ -1,0 +1,77 @@
+<!-- Login Form -->
+<div class="container" ng-if="onLogin">
+    <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+                <h2>User Login</h2>
+                <p>Please enter your email and password</p>
+            </div>
+            <form id="Login">
+                <div class="form-group">
+                    <input type="email" class="form-control" ng-model="credentials.email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" ng-model="credentials.password" placeholder="Password">
+                </div>
+                <button type="button" ng-click="login(credentials)" class="btn btn-primary">Login</button>
+                <button type="button" ng-click="switchLogReg()" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End login Form -->
+
+
+<!-- Register Form -->
+<div class="container" ng-if="!onLogin">    
+    <div class="login-form">
+        <div class="main-div">
+            <div class="panel">
+                <h2>{{ regType }} Register</h2>
+                <p>Please enter your information</p>
+            </div>
+            <div class="form-group">
+                <div class="btn-group">
+                    <label class="btn btn-success" ng-click="regType = 'User'">User</label>
+                    <label class="btn btn-success" ng-click="regType = 'Band'">Band</label>
+                </div>
+            </div>
+            <form id="Login" ng-if="regType == 'User'">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="user_info.name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" ng-model="user_info.email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" ng-model="user_info.password" placeholder="Password">
+                </div>
+                <button type="button" ng-click="register_user(user_info)" class="btn btn-primary">Register</button>
+                <button type="button" ng-click="switchLogReg()" class="btn btn-primary">Login</button>
+            </form>
+
+            <form id="Login" ng-if="regType == 'Band'">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="user_info.name" placeholder="Band name">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" ng-model="user_info.email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" ng-model="user_info.password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="textarea" class="form-control" ng-model="user_info.info" placeholder="Band info">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="genre" ng-model="user_info.genre" placeholder="Genre">
+                        <option ng-value="g" ng-repeat="g in genres">{{g}}</option>
+                    </select>
+                </div>
+                <button type="button" ng-click="register_band(user_info)" class="btn btn-primary">Register</button>
+                <button type="button" ng-click="switchLogReg()" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Register Form -->

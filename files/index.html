@@ -1,0 +1,58 @@
+<html lang="en" ng-app="myApp" ng-controller="indexCtrl">
+
+<head>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <link href="https://vitalets.github.io/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-toastr@2/dist/angular-toastr.css">
+
+</head>
+
+<body>
+    <div ng-if="!check_login()">
+        <div ng-include="'login.html'"></div>
+    </div>
+    <div ng-if="check_login()">
+        <div ng-include="'app.html'"></div>
+    </div>
+</body>
+
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-route.js"></script>
+<script src="assets/js/xeditable.min.js"></script>
+<script src="assets/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/angular-toastr@2/dist/angular-toastr.tpls.js"></script>
+
+<script src="controllers/home-controller.js"></script>
+<script src="controllers/main-controller.js"></script>
+
+<script>
+    var app = angular.module("myApp", ["ngRoute", "xeditable", "ui.bootstrap", "toastr"]);
+
+    app.controller('homeController', HomeController);
+    app.controller('mainController', MainController);
+
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: "views/home.html",
+                controller: "homeController"
+            })
+            .when("/main", {
+                templateUrl: "views/main.html",
+                controller: "mainController"
+            });
+    });     
+</script>
+
+
+
+<script src="controllers/index-controller.js"></script>
+
+</html>
