@@ -1,7 +1,6 @@
 app.controller('indexCtrl', function ($scope, $location, $http, toastr) {
     $scope.regType = 'User';
     $scope.onLogin = true;
-
     $scope.genres = ['Rock', 'Pop', 'Blues', 'Rap', 'Jazz'];
 
     $scope.switchLogReg = function () {
@@ -10,11 +9,26 @@ app.controller('indexCtrl', function ($scope, $location, $http, toastr) {
         console.log($scope.onLogin);
     }
 
-    $scope.login = function (credentials) {
-        $http.post('/login', credentials).then(function (response) {
+    $scope.user_login = function (credentials) {
+        $http.post('/login/user', credentials).then(function (response) {
             if (response.data.success) {
                 localStorage.setItem('user', response.data.token);
+                localStorage.setItem('type', response.data.type);
                 toastr.success('Welcome user.');
+            } else {
+                toastr.error('Credentials incorrect.');
+            }
+        }), function (error) {
+            console.log(error);
+        }
+    }
+
+    $scope.band_login = function (credentials) {
+        $http.post('/login/band', credentials).then(function (response) {
+            if (response.data.success) {
+                localStorage.setItem('user', response.data.token);
+                localStorage.setItem('type', response.data.type);
+                toastr.success('Welcome band.');
             } else {
                 toastr.error('Credentials incorrect.');
             }
@@ -68,7 +82,6 @@ app.controller('indexCtrl', function ($scope, $location, $http, toastr) {
         $scope.visible = $scope.visible = true;
     }
 
-    
     $scope.closeModal = function () {
         $scope.visible = true;
         $scope.visible = $scope.visible = true;
