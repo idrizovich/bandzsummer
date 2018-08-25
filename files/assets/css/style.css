@@ -283,14 +283,13 @@ figure {
 }
 
 #fh5co-aside {
-  padding-top: 40px;
+  padding-top: 20px ;
   padding-bottom: 40px;
   width: 15%;
   position: fixed;
   bottom: 0;
   top: 0;
   left: 0;
-  overflow-y: scroll;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -300,7 +299,7 @@ figure {
 }
 @media screen and (max-width: 1200px) {
   #fh5co-aside {
-    width: 30%;
+    width: 24%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1375,4 +1374,3 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 }
 .back { text-align: left; margin-top:10px;}
 .back a {color: #444444; font-size: 13px;text-decoration: none;}
-/*# sourceMappingURL=style.css.map */

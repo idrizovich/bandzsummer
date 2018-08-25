@@ -1,7 +1,9 @@
 app.controller('indexCtrl', function ($scope, $location, $http, toastr) {
+    $scope.user_info = {type: 'User'}
     $scope.regType = 'User';
     $scope.onLogin = true;
     $scope.genres = ['Rock', 'Pop', 'Blues', 'Rap', 'Jazz'];
+    $scope.type = ['Band', 'User'];
 
     $scope.switchLogReg = function () {
         console.log($scope.onLogin);
@@ -9,8 +11,8 @@ app.controller('indexCtrl', function ($scope, $location, $http, toastr) {
         console.log($scope.onLogin);
     }
 
-    $scope.user_login = function (credentials) {
-        $http.post('/login/user', credentials).then(function (response) {
+    $scope.login = function (credentials) {
+        $http.post('/login', credentials).then(function (response) {
             if (response.data.success) {
                 localStorage.setItem('user', response.data.token);
                 localStorage.setItem('type', response.data.type);
@@ -23,19 +25,6 @@ app.controller('indexCtrl', function ($scope, $location, $http, toastr) {
         }
     }
 
-    $scope.band_login = function (credentials) {
-        $http.post('/login/band', credentials).then(function (response) {
-            if (response.data.success) {
-                localStorage.setItem('user', response.data.token);
-                localStorage.setItem('type', response.data.type);
-                toastr.success('Welcome band.');
-            } else {
-                toastr.error('Credentials incorrect.');
-            }
-        }), function (error) {
-            console.log(error);
-        }
-    }
 
     $scope.register_user = function (user_info) {
         $http.post('/register/user', user_info).then(function (response) {

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/angular-toastr@2/dist/angular-toastr.css">
 
 
-    
+
 
 </head>
 
@@ -34,31 +34,40 @@
 
 <script src="controllers/home-controller.js"></script>
 <script src="controllers/main-controller.js"></script>
+<script src="controllers/about-controller.js"></script>
+<script src="controllers/genre-controller.js"></script>
 
 <script src="assets/release/popeye.js"></script>
-    <link rel="stylesheet" href="assets/release/popeye.css">
+<link rel="stylesheet" href="assets/release/popeye.css">
 
 <script>
     var app = angular.module("myApp", ["ngRoute", "xeditable", "ui.bootstrap", "toastr", "pathgather.popeye"]);
 
     app.controller('homeController', HomeController);
     app.controller('mainController', MainController);
+    app.controller('aboutController', AboutController);
+    app.controller('genreController', GenreController);
 
     app.config(function ($routeProvider) {
         $routeProvider
             .when("/", {
+                templateUrl: "views/main.html",
+                controller: "mainController"
+            })
+            .when("/about", {
+                templateUrl: "views/about.html",
+                controller: "aboutController"
+            })
+            .when("/home", {
                 templateUrl: "views/home.html",
                 controller: "homeController"
             })
-            .when("/main", {
-                templateUrl: "views/main.html",
-                controller: "mainController"
+            .when("/genre", {
+                templateUrl: "views/genre.html",
+                controller: "genreController"
             });
     });     
 </script>
 
-
-
 <script src="controllers/index-controller.js"></script>
-
 </html>

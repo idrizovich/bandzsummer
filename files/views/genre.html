@@ -1,7 +1,65 @@
-<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item"></div>
-<a href="work.html">
-    <img src="assets/images/work_2.jpg" class="img-responsive">
-    <h3 class="fh5co-work-title">Work Title Here</h3>
-    <p>Web, Packaging</p>
-</a>
-</div>
+<!-- Navbar -->
+<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+    <button class="btn btn-success" ng-click="openModal()" ng-if="user_type == 'Band'">Add new event</button>
+    <button class="btn btn-danger" ng-click="logout()">Logout</button>
+    <h1 id="fh5co-logo"><a href="main.html"><img src="assets/images/logo.png"></a></h1>
+    <nav id="fh5co-main-menu" role="navigation">
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li class="fh5co-active"><a href="genre.html" ng-if="user_type == 'Band'" >Genre</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav> 
+</aside>
+
+<div id="fh5co-main">
+    <div class="fh5co-narrow-content">
+        <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Najbolji bendovi na svijetu
+            <span>na cijelom svijetu</span>
+        </h2>
+        <div class="popeye-modal-container" ng-show="visible">
+            <div class="popeye-modal">
+                <a class="popeye-close-modal" href ng-click="closeModal()"></a>
+                <form name="myForm">
+                    <input type="text" style="display:none" ng-model="event._id">
+                    <input type="text" name="eventBandName" id="eventBandName" ng-model="event.eventBandName" placeholder="Enter bands name" required>
+                    <span ng-show="myForm.eventBandName.$touched && myForm.eventBandName.$invalid">The name is required.</span>
+                    <br>
+                    <br>
+                    <input type="number" name="eventTime" id="eventTime" ng-model="event.eventTime" placeholder="Enter the time">
+                    <br>
+                    <br>
+                    <input type="text" name="eventLocalName" id="eventLocalName" ng-model="event.eventLocalName" placeholder="Enter local name">
+                    <br>
+                    <br>
+                    <input type="textarea" name="eventLocalInfo" id="eventLocalInfo" ng-model="event.eventLocalInfo" placeholder="Enter info about the location">
+                    <br>
+                    <br>
+                    <button ng-click="addEvent(); closeModal() ">Add</button>
+                    <button ng-click="editEvent(event); closeModal()">Edit</button>
+                    <button ng-click="closeModal()">Close</button>
+                </form>
+            </div>
+        </div>
+        <div class="row animate-box" data-animate-effect="fadeInLeft">
+            <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item" ng-repeat="event in events">
+                    <a>
+                        <img src="assets/images/work_2.jpg" class="img-responsive">
+                        <h3 class="fh5co-work-title">Band name: {{event.eventBandName}}</h3>
+                        <p>At: {{event.eventTime}}</p>
+                        <p>In: {{event.eventLocalInfo}}</p>
+                        <p>Info: {{event.eventLocalName}}</p>
+                        <a>
+                            <button class="btn btn-danger " ng-click="deleteEvent(event._id)" ng-if="user_type == 'Band'">Delete</button>
+                        </a>
+                        <a>
+                            <button class="btn btn-warning " ng-click="openEditEvent(event._id);openModal()" ng-if="user_type == 'Band'">Edit</button>
+                        </a>
+                    </a>
+                </div>
+                <div class="clearfix visible-md-block"></div>
+            </div>
+        </div>
+    </div>
+ </div>
