@@ -6,7 +6,7 @@ const jwt_secret = 'dinchetovjwtsecretjenajboljijwtsecretnasvijetu0110';
 
 var mongojs = require('mongojs')
 var jwt = require('jsonwebtoken');
-var db = mongojs('localhost:27017/Bandz', ['events'])
+var db = mongojs('localhost:27017/Bandz', ['events','users'])
 var MongoId = require('mongodb').ObjectID;
 
 app.use(express.json());
@@ -112,6 +112,14 @@ app.post('/rest/v1/event', function (request, response) {
     response.send(event);
   })
 })
+
+app.get('/rest/v1/users', function (req, res) {
+  db.collection('users').find().toArray((err, user) => {
+    if (err) return console.log(err);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(user);
+  })
+});
 
 app.get('/rest/v1/events', function (req, res) {
   db.collection('events').find().toArray((err, event) => {

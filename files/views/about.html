@@ -1,13 +1,12 @@
 <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
     <button class="btn btn-success" ng-click="openModal()" ng-if="user_type == 'Band'">Add new event</button>
     <button class="btn btn-danger" ng-click="logout()">Logout</button>
-    <h1 id="fh5co-logo"><a href="main.html"><img src="assets/images/logo.png"></a></h1>
+    <h1 id="fh5co-logo"><a href="/"><img src="assets/images/logo.png"></a></h1>
     <nav id="fh5co-main-menu" role="navigation">
         <ul>
-            <li><a href="main.html">Home</a></li>
-            <li><a href="genre.html" ng-if="user_type == 'Band'" >Genre</a></li>
-            <li class="fh5co-active"><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#!genre" ng-if="user_type == 'Band'" >Genre</a></li>
+            <li class="fh5co-active"><a href="#!about">About</a></li>
         </ul>
     </nav> 
 </aside>
