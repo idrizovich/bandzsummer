@@ -6,7 +6,7 @@
     <nav id="fh5co-main-menu" role="navigation">
         <ul>
             <li><a href="/">Home</a></li>
-            <li class="fh5co-active"><a href="#!genre"  >Genre</a></li>
+            <li class="fh5co-active"><a href="#!genre">Genre</a></li>
             <li><a href="#!about">About</a></li>
         </ul>
     </nav> 
@@ -16,18 +16,12 @@
     <div class="fh5co-narrow-content">
         <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Najbolji bendovi na svijetu
             <span>na cijelom svijetu</span>
-        </h2>
+         </h2>  
+         <div ng-repeat="bnd_cnt in bandcount">
+            <input  type="checkbox" ng-click="includeGenre(bnd_cnt._id)" />   {{bnd_cnt._id}} ({{bnd_cnt.cnt}})
+         </div>
+            <br><br>
 
-            <li>
-               <input  type="checkbox" ng-click="includeGenre('Rock')" />   Rock  
-               <input  type="checkbox" ng-click="includeGenre('Pop')" />   Pop  
-               <input  type="checkbox" ng-click="includeGenre('Blues')" />   Blues  
-               <input  type="checkbox" ng-click="includeGenre('Rap')" />   Rap  
-               <input  type="checkbox" ng-click="includeGenre('Jazz')" />   Jazz  
-            </li>
-
-            <!-- ng-if="user_type == 'Band'"  -->
-            
        <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item" ng-repeat="user in users | filter :genreFilter">
             <a>
                 <img src="assets/images/this.png" class="img-responsive">

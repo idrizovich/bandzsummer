@@ -12,6 +12,6 @@ $ when you login as band you will be able to make new events giving the location
 
 $ bands will be able to get information about their events and gigs (how many people came ),  you will be able to delete some of the bad reviews if you would like.
 
-$ when you login as user you will be able to sort the bands by genre or location and give your comments and reviews on it, and also you will be able to "follow" your favourite bands which gives you the advantage to get an email where their next gig is 
+$ when you login as user you will be able to sort the bands by genre
 
 $ there will be "gig of the week" (coming soon)

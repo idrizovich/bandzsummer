@@ -144,6 +144,23 @@ app.delete('/rest/v1/events/:event_id', function (req, res) {
     });
 });
 
+app.get('/bandcount', function(req, res){
+  db.collection("users").aggregate([{$group : {_id : '$genre', cnt : {$sum : 1}}}], function(err, docs) {
+    console.log(docs);
+    res.json(docs);
+  });
+});
+
+app.get('/count/:type', function(req, res){
+  db.collection("users").find({ genre : req.params.type}).count((err, data) => {
+      if(err) return console.log(err);
+      res.send({
+          bands_count: data
+      });
+  });
+});
+
+
 app.put('/rest/v1/events', function (req, res) {
   event = req.body;
   db.collection('events').findOneAndUpdate({ _id: new MongoId(event._id) }, {
